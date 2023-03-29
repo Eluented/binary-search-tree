@@ -2,7 +2,7 @@ package com.sparta.Room1;
 
 import java.util.NoSuchElementException;
 
-public class BinarySearchTree implements com.sparta.Room1.BinaryTree {
+public class BinarySearchTree {
         private Node root;
         private int size;
 

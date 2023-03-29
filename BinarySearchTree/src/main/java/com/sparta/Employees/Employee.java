@@ -1,6 +1,5 @@
 package com.sparta.Employees;
 import java.time.LocalDate;
-import java.util.Random;
 
 public class Employee {
     private String empNo;
@@ -11,12 +10,12 @@ public class Employee {
     private LocalDate hireDate;
 
     // Constructor
-    public Employee(String empNo, LocalDate birthDate, String firstName, String lastName, Gender gender, LocalDate hireDate) {
+    public Employee(String empNo, LocalDate birthDate, String firstName, String lastName, String gender, LocalDate hireDate) {
         this.empNo = empNo;
         this.birthDate = birthDate;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.gender = gender;
+        this.gender = Gender.valueOf(gender);
         this.hireDate = hireDate;
     }
 
