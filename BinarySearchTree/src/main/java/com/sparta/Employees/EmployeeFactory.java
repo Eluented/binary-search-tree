@@ -1,4 +1,7 @@
 package com.sparta.Employees;
+import com.sparta.model.Employee;
+import com.sparta.model.Gender;
+
 import java.time.LocalDate;
 import java.util.Random;
 
