@@ -2,13 +2,14 @@ package com.sparta.Room1;
 
 import java.util.NoSuchElementException;
 
-public class BinarySearchTree implements com.sparta.anu.BinaryTree {
+public class BinarySearchTree implements com.sparta.Room1.BinaryTree {
         private Node root;
         private int size;
 
         private class Node {
             int value;
             Node left, right;
+            //Class types
 
             Node(int value) {
                 this.value = value;
@@ -29,7 +30,7 @@ public class BinarySearchTree implements com.sparta.anu.BinaryTree {
 
         public void addElement(int element) {
             root = addElement(root, element);
-            size++;
+            size++;             //The size of the tree
         }
 
         private Node addElement(Node node, int element) {
