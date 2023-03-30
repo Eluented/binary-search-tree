@@ -1,8 +1,14 @@
 package com.sparta.Room1;
 
+import com.sparta.model.Employee;
+
+import java.util.Arrays;
+import java.util.List;
+
 public class BinaryTreeStarter {
     public static void start(){
-//       // int rootNode=Nodes.getRootElement();
-//        System.out.println(rootNode);
+     //   List<Employee> employees = Arrays.asList(employeeData);
+
+
     }
 }

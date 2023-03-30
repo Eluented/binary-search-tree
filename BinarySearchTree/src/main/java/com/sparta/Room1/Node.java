@@ -2,6 +2,7 @@ package com.sparta.Room1;
 
 import com.sparta.model.Employee;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Node {
@@ -9,8 +10,12 @@ public class Node {
     Set<Employee> employees;
     Node left, right;
 
-    Node(String  value) {
+    Node(Employee employee) {
 
-        this.lastName = value;
+        this.lastName = employee.getLastName();
+        if(null == employees) {
+            employees = new HashSet<>();
+        }
+        employees.add(employee);
     }
 }
