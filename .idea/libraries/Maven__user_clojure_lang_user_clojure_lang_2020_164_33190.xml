@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: user.clojure.lang:user.clojure.lang:2020.164.33190">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/user/clojure/lang/user.clojure.lang/2020.164.33190/user.clojure.lang-2020.164.33190.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/user/clojure/lang/user.clojure.lang/2020.164.33190/user.clojure.lang-2020.164.33190-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/user/clojure/lang/user.clojure.lang/2020.164.33190/user.clojure.lang-2020.164.33190-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
