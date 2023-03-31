@@ -1,0 +1,267 @@
+Index: BinarySearchTree/src/main/java/com/sparta/Room1/Node.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.sparta.Room1;\n\nimport com.sparta.model.Employee;\n\nimport java.util.Set;\n\npublic class Node {\n    String lastName;\n    Set<Employee> employees;\n    Node left, right;\n\n    Node(String  value) {\n\n        this.lastName = value;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/BinarySearchTree/src/main/java/com/sparta/Room1/Node.java b/BinarySearchTree/src/main/java/com/sparta/Room1/Node.java
+--- a/BinarySearchTree/src/main/java/com/sparta/Room1/Node.java	(revision 0d81bf33a1c7323efb212dec8c8d702883696749)
++++ b/BinarySearchTree/src/main/java/com/sparta/Room1/Node.java	(date 1680187127828)
+@@ -8,9 +8,10 @@
+     String lastName;
+     Set<Employee> employees;
+     Node left, right;
++    Node root;
++    Node(Employee employee) {
+ 
+-    Node(String  value) {
++        this.lastName = employee.getLastName();
+ 
+-        this.lastName = value;
+     }
+ }
+Index: BinarySearchTree/src/main/java/com/sparta/Room1/App.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.sparta.Room1;\n\n/**\n * Hello world!\n *\n */\npublic class App \n{\n    public static void main( String[] args )\n    {\n\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/BinarySearchTree/src/main/java/com/sparta/Room1/App.java b/BinarySearchTree/src/main/java/com/sparta/Room1/App.java
+--- a/BinarySearchTree/src/main/java/com/sparta/Room1/App.java	(revision 0d81bf33a1c7323efb212dec8c8d702883696749)
++++ b/BinarySearchTree/src/main/java/com/sparta/Room1/App.java	(date 1680186271524)
+@@ -1,13 +1,10 @@
+ package com.sparta.Room1;
+ 
+-/**
+- * Hello world!
+- *
+- */
++
+ public class App 
+ {
+     public static void main( String[] args )
+     {
+-
+-    }
++        BinaryTreeStarter.start();
++       }
+ }
+Index: BinarySearchTree/src/main/java/com/sparta/Room1/BinarySearchTree.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.sparta.Room1;\n\nimport java.util.NoSuchElementException;\n\npublic class BinarySearchTree implements BinaryTree {\n        private Node root;\n        private int size;\n\n        public int getRootElement() {\n            if (root == null) {\n                throw new NoSuchElementException(\"BinarySearchTree is empty.\");\n            }\n\n            return root.value;\n        }\n\n        public int getNumberOfElements() {\n            return size;\n        }\n\n        public void addElement(int element) {\n            root = addElement(root, element);\n            size++;             //The size of the tree\n        }\n\n        private Node addElement(Node node, int element) {\n            if (node == null) {\n                return new Node(element);\n            }\n\n            if (element < node.value) {\n                node.left = addElement(node.left, element);\n            } else if (element > node.value) {\n                node.right = addElement(node.right, element);\n            }\n\n            return node;\n        }\n\n        public void addElements(int[] elements) {\n            for (int element : elements) {\n                addElement(element);\n            }\n        }\n\n        public boolean findElement(int value) {\n            return findElement(root, value);\n        }\n\n        private boolean findElement(Node node, int value) {\n            if (node == null) {\n                return false;\n            }\n\n            if (value == node.value) {\n                return true;\n            } else if (value < node.value) {\n                return findElement(node.left, value);\n            } else {\n                return findElement(node.right, value);\n            }\n        }\n\n        public int[] getSortedTreeAsc() {\n            int[] result = new int[size];\n            int i = 0;\n            inOrder(root, result, i);\n            return result;\n        }\n\n        private int inOrder(Node node, int[] result, int i) {\n            if (node == null) {\n                return i;\n            }\n            i = inOrder(node.left, result, i);\n            result[i++] = node.value;\n            return inOrder(node.right, result, i);\n        }\n\n        public int[] getSortedTreeDesc() {\n            int[] result = new int[size];\n            int i = 0;\n            reverseInOrder(root, result, i);\n            return result;\n        }\n\n        private int reverseInOrder(Node node, int[] result, int i) {\n            if (node == null) {\n                return i;\n            }\n            i = reverseInOrder(node.right, result, i);\n            result[i++] = node.value;\n            return reverseInOrder(node.left, result, i);\n        }\n\n}\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/BinarySearchTree/src/main/java/com/sparta/Room1/BinarySearchTree.java b/BinarySearchTree/src/main/java/com/sparta/Room1/BinarySearchTree.java
+--- a/BinarySearchTree/src/main/java/com/sparta/Room1/BinarySearchTree.java	(revision 0d81bf33a1c7323efb212dec8c8d702883696749)
++++ b/BinarySearchTree/src/main/java/com/sparta/Room1/BinarySearchTree.java	(date 1680187127822)
+@@ -1,5 +1,7 @@
+ package com.sparta.Room1;
+ 
++import com.sparta.model.Employee;
++
+ import java.util.NoSuchElementException;
+ 
+ public class BinarySearchTree implements BinaryTree {
+@@ -11,27 +13,32 @@
+                 throw new NoSuchElementException("BinarySearchTree is empty.");
+             }
+ 
+-            return root.value;
++           // return root.value;
+         }
+ 
+         public int getNumberOfElements() {
+             return size;
+         }
+ 
+-        public void addElement(int element) {
+-            root = addElement(root, element);
++    @Override
++    public void addElement(int element) {
++
++    }
++
++    public void addElement(Employee employee) {
++            root = addElement(root, employee);
+             size++;             //The size of the tree
+         }
+ 
+-        private Node addElement(Node node, int element) {
++        private Node addElement(Node node, Employee employee) {
+             if (node == null) {
+-                return new Node(element);
++                return new Node(employee);
+             }
+ 
+-            if (element < node.value) {
+-                node.left = addElement(node.left, element);
+-            } else if (element > node.value) {
+-                node.right = addElement(node.right, element);
++            if (employee.getLastName() < root.lastName) {
++                node.left = addElement(node.left, employee);
++            } else if (employee > node.lastName) {
++                node.right = addElement(node.right, employee);
+             }
+ 
+             return node;
+@@ -52,9 +59,9 @@
+                 return false;
+             }
+ 
+-            if (value == node.value) {
++            if (value == node.lastname) {
+                 return true;
+-            } else if (value < node.value) {
++            } else if (value < node.lastName) {
+                 return findElement(node.left, value);
+             } else {
+                 return findElement(node.right, value);
+Index: BinarySearchTree/src/main/java/com/sparta/model/Employee.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.sparta.model;\n\nimport java.time.LocalDate;\n\npublic class Employee {\n    public String getEmpId() {\n        return empId;\n    }\n\n    public void setEmpId(String empId) {\n        this.empId = empId;\n    }\n\n    public String getNamePrefix() {\n        return namePrefix;\n    }\n\n    public void setNamePrefix(String namePrefix) {\n        this.namePrefix = namePrefix;\n    }\n\n    public String getMiddleInitial() {\n        return middleInitial;\n    }\n\n    public void setMiddleInitial(String middleInitial) {\n        this.middleInitial = middleInitial;\n    }\n\n    public String getFirstName() {\n        return firstName;\n    }\n\n    public void setFirstName(String firstName) {\n        this.firstName = firstName;\n    }\n\n    public String getLastName() {\n        return lastName;\n    }\n\n    public void setLastName(String lastName) {\n        this.lastName = lastName;\n    }\n\n    public Gender getGender() {\n        return gender;\n    }\n\n    public void setGender(Gender gender) {\n        this.gender = gender;\n    }\n\n    public String getEmailId() {\n        return emailId;\n    }\n\n    public void setEmailId(String emailId) {\n        this.emailId = emailId;\n    }\n\n    public LocalDate getDateOfBirth() {\n        return dateOfBirth;\n    }\n\n    public void setDateOfBirth(LocalDate dateOfBirth) {\n        this.dateOfBirth = dateOfBirth;\n    }\n\n    public LocalDate getDateOfJoining() {\n        return dateOfJoining;\n    }\n\n    public void setDateOfJoining(LocalDate dateOfJoining) {\n        this.dateOfJoining = dateOfJoining;\n    }\n\n    public Integer getSalary() {\n        return salary;\n    }\n\n    public void setSalary(Integer salary) {\n        this.salary = salary;\n    }\n\n    private String empId;\n    private String namePrefix;\n    private String middleInitial;\n    private String firstName;\n    private String lastName;\n    private Gender gender;\n    private String emailId;\n    private LocalDate dateOfBirth;\n    private LocalDate dateOfJoining;\n    private Integer salary;\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/BinarySearchTree/src/main/java/com/sparta/model/Employee.java b/BinarySearchTree/src/main/java/com/sparta/model/Employee.java
+--- a/BinarySearchTree/src/main/java/com/sparta/model/Employee.java	(revision 0d81bf33a1c7323efb212dec8c8d702883696749)
++++ b/BinarySearchTree/src/main/java/com/sparta/model/Employee.java	(date 1680183816664)
+@@ -3,6 +3,22 @@
+ import java.time.LocalDate;
+ 
+ public class Employee {
++
++
++    private String empId;
++    private String namePrefix;
++    private String middleInitial;
++    private String firstName;
++    private String lastName;
++    private Gender gender;
++    private String emailId;
++    private LocalDate dateOfBirth;
++    private LocalDate dateOfJoining;
++    private Integer salary;
++
++//    public Employee(String empNo, LocalDate birthDate, String firstName, String lastName, Gender gender, LocalDate hireDate) {
++//    }
++
+     public String getEmpId() {
+         return empId;
+     }
+@@ -83,14 +99,19 @@
+         this.salary = salary;
+     }
+ 
+-    private String empId;
+-    private String namePrefix;
+-    private String middleInitial;
+-    private String firstName;
+-    private String lastName;
+-    private Gender gender;
+-    private String emailId;
+-    private LocalDate dateOfBirth;
+-    private LocalDate dateOfJoining;
+-    private Integer salary;
++    @Override
++    public String toString() {
++        return "Employee{" +
++                "empId='" + empId + '\'' +
++                ", namePrefix='" + namePrefix + '\'' +
++                ", middleInitial='" + middleInitial + '\'' +
++                ", firstName='" + firstName + '\'' +
++                ", lastName='" + lastName + '\'' +
++                ", gender=" + gender +
++                ", emailId='" + emailId + '\'' +
++                ", dateOfBirth=" + dateOfBirth +
++                ", dateOfJoining=" + dateOfJoining +
++                ", salary=" + salary +
++                '}';
++    }
+ }
+Index: BinarySearchTree/BinarySearchTree.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule=\"true\" type=\"JAVA_MODULE\" version=\"4\">\n  <component name=\"NewModuleRootManager\" LANGUAGE_LEVEL=\"JDK_1_7\">\n    <output url=\"file://$MODULE_DIR$/target/classes\" />\n    <output-test url=\"file://$MODULE_DIR$/target/test-classes\" />\n    <content url=\"file://$MODULE_DIR$\">\n      <sourceFolder url=\"file://$MODULE_DIR$/src/main/java\" isTestSource=\"false\" />\n      <sourceFolder url=\"file://$MODULE_DIR$/src/main/resources\" type=\"java-resource\" />\n      <sourceFolder url=\"file://$MODULE_DIR$/src/test/java\" isTestSource=\"true\" />\n      <excludeFolder url=\"file://$MODULE_DIR$/target\" />\n    </content>\n    <orderEntry type=\"inheritedJdk\" />\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\n    <orderEntry type=\"library\" name=\"Maven: org.junit.jupiter:junit-jupiter:5.9.2\" level=\"project\" />\n    <orderEntry type=\"library\" name=\"Maven: org.junit.jupiter:junit-jupiter-api:5.9.2\" level=\"project\" />\n    <orderEntry type=\"library\" name=\"Maven: org.opentest4j:opentest4j:1.2.0\" level=\"project\" />\n    <orderEntry type=\"library\" name=\"Maven: org.junit.platform:junit-platform-commons:1.9.2\" level=\"project\" />\n    <orderEntry type=\"library\" name=\"Maven: org.apiguardian:apiguardian-api:1.1.2\" level=\"project\" />\n    <orderEntry type=\"library\" name=\"Maven: org.junit.jupiter:junit-jupiter-params:5.9.2\" level=\"project\" />\n    <orderEntry type=\"library\" scope=\"RUNTIME\" name=\"Maven: org.junit.jupiter:junit-jupiter-engine:5.9.2\" level=\"project\" />\n    <orderEntry type=\"library\" scope=\"RUNTIME\" name=\"Maven: org.junit.platform:junit-platform-engine:1.9.2\" level=\"project\" />\n    <orderEntry type=\"library\" name=\"Maven: org.apache.logging.log4j:log4j-api:2.20.0\" level=\"project\" />\n    <orderEntry type=\"library\" name=\"Maven: org.apache.logging.log4j:log4j-core:2.20.0\" level=\"project\" />\n  </component>\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/BinarySearchTree/BinarySearchTree.iml b/BinarySearchTree/BinarySearchTree.iml
+--- a/BinarySearchTree/BinarySearchTree.iml	(revision 0d81bf33a1c7323efb212dec8c8d702883696749)
++++ b/BinarySearchTree/BinarySearchTree.iml	(date 1680122168387)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
++  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+     <output url="file://$MODULE_DIR$/target/classes" />
+     <output-test url="file://$MODULE_DIR$/target/test-classes" />
+     <content url="file://$MODULE_DIR$">
+Index: BinarySearchTree/src/main/java/com/sparta/Employees/EmployeeStarter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/BinarySearchTree/src/main/java/com/sparta/Employees/EmployeeStarter.java b/BinarySearchTree/src/main/java/com/sparta/Employees/EmployeeStarter.java
+new file mode 100644
+--- /dev/null	(date 1680184341928)
++++ b/BinarySearchTree/src/main/java/com/sparta/Employees/EmployeeStarter.java	(date 1680184341928)
+@@ -0,0 +1,14 @@
++package com.sparta.Employees;
++
++import com.sparta.model.Employee;
++
++import java.util.Scanner;
++
++public class EmployeeStarter {
++    public static void start(){
++        System.out.println("Enter a number between 1 to 1000 to get employees details: ");
++        Scanner scanner =new Scanner(System.in);
++        int numberOfEmployees=scanner.nextInt();
++        Employee[] employees=EmployeeFactory.getEmployees(numberOfEmployees);
++    }
++}
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"MavenProjectsManager\">\n    <option name=\"originalFiles\">\n      <list>\n        <option value=\"$PROJECT_DIR$/BinarySearchTree/pom.xml\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_19\" default=\"true\" project-jdk-name=\"19\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/out\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 0d81bf33a1c7323efb212dec8c8d702883696749)
++++ b/.idea/misc.xml	(date 1680111016235)
+@@ -7,7 +7,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="19" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="openjdk-17" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"CompilerConfiguration\">\n    <annotationProcessing>\n      <profile name=\"Maven default annotation processors profile\" enabled=\"true\">\n        <sourceOutputDir name=\"target/generated-sources/annotations\" />\n        <sourceTestOutputDir name=\"target/generated-test-sources/test-annotations\" />\n        <outputRelativeToContentRoot value=\"true\" />\n        <module name=\"BinarySearchTree\" />\n      </profile>\n    </annotationProcessing>\n    <bytecodeTargetLevel>\n      <module name=\"BinarySearchTree\" target=\"1.7\" />\n    </bytecodeTargetLevel>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision 0d81bf33a1c7323efb212dec8c8d702883696749)
++++ b/.idea/compiler.xml	(date 1680122168392)
+@@ -10,7 +10,7 @@
+       </profile>
+     </annotationProcessing>
+     <bytecodeTargetLevel>
+-      <module name="BinarySearchTree" target="1.7" />
++      <module name="BinarySearchTree" target="8" />
+     </bytecodeTargetLevel>
+   </component>
+ </project>
+\ No newline at end of file

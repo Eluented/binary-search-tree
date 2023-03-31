@@ -1,0 +1,483 @@
+Index: BinarySearchTree/src/main/java/com/sparta/Room1/BinaryTreeStarter.java
+===================================================================
+diff --git a/BinarySearchTree/src/main/java/com/sparta/Room1/BinaryTreeStarter.java b/BinarySearchTree/src/main/java/com/sparta/Room1/BinaryTreeStarter.java
+deleted file mode 100644
+--- a/BinarySearchTree/src/main/java/com/sparta/Room1/BinaryTreeStarter.java	(revision 2d260c92d138a5d17c63879e31869d2037dd9723)
++++ /dev/null	(revision 2d260c92d138a5d17c63879e31869d2037dd9723)
+@@ -1,14 +0,0 @@
+-package com.sparta.Room1;
+-
+-import com.sparta.model.Employee;
+-
+-import java.util.Arrays;
+-import java.util.List;
+-
+-public class BinaryTreeStarter {
+-    public static void start(){
+-     //   List<Employee> employees = Arrays.asList(employeeData);
+-
+-
+-    }
+-}
+Index: BinarySearchTree/src/main/java/com/sparta/Employees/Employee.java
+===================================================================
+diff --git a/BinarySearchTree/src/main/java/com/sparta/Employees/Employee.java b/BinarySearchTree/src/main/java/com/sparta/Employees/Employee.java
+deleted file mode 100644
+--- a/BinarySearchTree/src/main/java/com/sparta/Employees/Employee.java	(revision 2d260c92d138a5d17c63879e31869d2037dd9723)
++++ /dev/null	(revision 2d260c92d138a5d17c63879e31869d2037dd9723)
+@@ -1,71 +0,0 @@
+-package com.sparta.Employees;
+-import java.time.LocalDate;
+-
+-public class Employee {
+-    private String empNo;
+-    private LocalDate birthDate;
+-    private String firstName;
+-    private String lastName;
+-    private Gender gender;
+-    private LocalDate hireDate;
+-
+-    // Constructor
+-    public Employee(String empNo, LocalDate birthDate, String firstName, String lastName, String gender, LocalDate hireDate) {
+-        this.empNo = empNo;
+-        this.birthDate = birthDate;
+-        this.firstName = firstName;
+-        this.lastName = lastName;
+-        this.gender = Gender.valueOf(gender);
+-        this.hireDate = hireDate;
+-    }
+-
+-    // Getters and setters
+-    public String getEmpNo() {
+-        return empNo;
+-    }
+-
+-    public void setEmpNo(String empNo) {
+-        this.empNo = empNo;
+-    }
+-
+-    public LocalDate getBirthDate() {
+-        return birthDate;
+-    }
+-
+-    public void setBirthDate(LocalDate birthDate) {
+-        this.birthDate = birthDate;
+-    }
+-
+-    public String getFirstName() {
+-        return firstName;
+-    }
+-
+-    public void setFirstName(String firstName) {
+-        this.firstName = firstName;
+-    }
+-
+-    public String getLastName() {
+-        return lastName;
+-    }
+-
+-    public void setLastName(String lastName) {
+-        this.lastName = lastName;
+-    }
+-
+-    public Gender getGender() {
+-        return gender;
+-    }
+-
+-    public void setGender(Gender gender) {
+-        this.gender = gender;
+-    }
+-
+-    public LocalDate getHireDate() {
+-        return hireDate;
+-    }
+-
+-    public void setHireDate(LocalDate hireDate) {
+-        this.hireDate = hireDate;
+-    }
+-}
+-
+Index: BinarySearchTree/src/main/java/com/sparta/Employees/Gender.java
+===================================================================
+diff --git a/BinarySearchTree/src/main/java/com/sparta/Employees/Gender.java b/BinarySearchTree/src/main/java/com/sparta/Employees/Gender.java
+deleted file mode 100644
+--- a/BinarySearchTree/src/main/java/com/sparta/Employees/Gender.java	(revision 2d260c92d138a5d17c63879e31869d2037dd9723)
++++ /dev/null	(revision 2d260c92d138a5d17c63879e31869d2037dd9723)
+@@ -1,6 +0,0 @@
+-package com.sparta.Employees;
+-
+-public enum Gender {
+-    MALE,
+-    FEMALE
+-}
+Index: BinarySearchTree/src/main/java/com/sparta/Room1/App.java
+===================================================================
+diff --git a/BinarySearchTree/src/main/java/com/sparta/Room1/App.java b/BinarySearchTree/src/main/java/com/sparta/Room1/App.java
+deleted file mode 100644
+--- a/BinarySearchTree/src/main/java/com/sparta/Room1/App.java	(revision 2d260c92d138a5d17c63879e31869d2037dd9723)
++++ /dev/null	(revision 2d260c92d138a5d17c63879e31869d2037dd9723)
+@@ -1,13 +0,0 @@
+-package com.sparta.Room1;
+-
+-
+-import com.sparta.Employees.EmployeeStarter;
+-
+-public class App
+-{
+-    public static void main( String[] args )
+-    {
+-        BinaryTreeStarter.start();
+-       // EmployeeStarter.start();
+-       }
+-}
+Index: BinarySearchTree/src/main/java/com/sparta/Room1/BinaryTreeService.java
+===================================================================
+diff --git a/BinarySearchTree/src/main/java/com/sparta/Room1/BinaryTreeService.java b/BinarySearchTree/src/main/java/com/sparta/Room1/BinaryTreeService.java
+deleted file mode 100644
+--- a/BinarySearchTree/src/main/java/com/sparta/Room1/BinaryTreeService.java	(revision 2d260c92d138a5d17c63879e31869d2037dd9723)
++++ /dev/null	(revision 2d260c92d138a5d17c63879e31869d2037dd9723)
+@@ -1,4 +0,0 @@
+-package com.sparta.Room1;
+-
+-public class BinaryTreeService {
+-}
+Index: .idea/libraries/Maven__user_java_lang_user_java_lang_2020_164_33984.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/Maven__user_java_lang_user_java_lang_2020_164_33984.xml b/.idea/libraries/Maven__user_java_lang_user_java_lang_2020_164_33984.xml
+new file mode 100644
+--- /dev/null	(date 1680189208590)
++++ b/.idea/libraries/Maven__user_java_lang_user_java_lang_2020_164_33984.xml	(date 1680189208590)
+@@ -0,0 +1,13 @@
++<component name="libraryTable">
++  <library name="Maven: user.java.lang:user.java.lang:2020.164.33984">
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/user/java/lang/user.java.lang/2020.164.33984/user.java.lang-2020.164.33984.jar!/" />
++    </CLASSES>
++    <JAVADOC>
++      <root url="jar://$MAVEN_REPOSITORY$/user/java/lang/user.java.lang/2020.164.33984/user.java.lang-2020.164.33984-javadoc.jar!/" />
++    </JAVADOC>
++    <SOURCES>
++      <root url="jar://$MAVEN_REPOSITORY$/user/java/lang/user.java.lang/2020.164.33984/user.java.lang-2020.164.33984-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/Maven__user_clojure_lang_user_clojure_lang_2020_164_33190.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/Maven__user_clojure_lang_user_clojure_lang_2020_164_33190.xml b/.idea/libraries/Maven__user_clojure_lang_user_clojure_lang_2020_164_33190.xml
+new file mode 100644
+--- /dev/null	(date 1680189208587)
++++ b/.idea/libraries/Maven__user_clojure_lang_user_clojure_lang_2020_164_33190.xml	(date 1680189208587)
+@@ -0,0 +1,13 @@
++<component name="libraryTable">
++  <library name="Maven: user.clojure.lang:user.clojure.lang:2020.164.33190">
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/user/clojure/lang/user.clojure.lang/2020.164.33190/user.clojure.lang-2020.164.33190.jar!/" />
++    </CLASSES>
++    <JAVADOC>
++      <root url="jar://$MAVEN_REPOSITORY$/user/clojure/lang/user.clojure.lang/2020.164.33190/user.clojure.lang-2020.164.33190-javadoc.jar!/" />
++    </JAVADOC>
++    <SOURCES>
++      <root url="jar://$MAVEN_REPOSITORY$/user/clojure/lang/user.clojure.lang/2020.164.33190/user.clojure.lang-2020.164.33190-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/uiDesigner.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/uiDesigner.xml b/.idea/uiDesigner.xml
+new file mode 100644
+--- /dev/null	(date 1680114169861)
++++ b/.idea/uiDesigner.xml	(date 1680114169861)
+@@ -0,0 +1,124 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Palette2">
++    <group name="Swing">
++      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
++      </item>
++      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true">
++        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
++        <initial-values>
++          <property name="text" value="Button" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="RadioButton" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="CheckBox" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="Label" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
++          <preferred-size width="-1" height="20" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
++      </item>
++    </group>
++  </component>
++</project>
+\ No newline at end of file
+Index: BinarySearchTree/src/main/java/com/sparta/Room1/BinaryTree.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.sparta.Room1;\n\n\n\n    public interface BinaryTree {\n\n        int getRootElement();\n\n        int getNumberOfElements();\n\n        void addElement(int element);\n\n        void addElements(int[] elements);\n\n        boolean findElement(int value);\n\n//        int getLeftChild(int element) throws ChildNotFoundException;\n\n//        int getRightChild(int element) throws ChildNotFoundException;\n\n        int[] getSortedTreeAsc();\n\n        int[] getSortedTreeDesc();\n    }\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/BinarySearchTree/src/main/java/com/sparta/Room1/BinaryTree.java b/BinarySearchTree/src/main/java/com/sparta/Room1/BinaryTree.java
+--- a/BinarySearchTree/src/main/java/com/sparta/Room1/BinaryTree.java	(revision 2d260c92d138a5d17c63879e31869d2037dd9723)
++++ b/BinarySearchTree/src/main/java/com/sparta/Room1/BinaryTree.java	(date 1680192579331)
+@@ -1,8 +1,11 @@
+ package com.sparta.Room1;
+ 
+ 
++import com.sparta.model.Employee;
++
++import java.util.List;
+ 
+-    public interface BinaryTree {
++public interface BinaryTree {
+ 
+         int getRootElement();
+ 
+@@ -10,7 +13,7 @@
+ 
+         void addElement(int element);
+ 
+-        void addElements(int[] elements);
++        void addElements(List<Employee> elements);
+ 
+         boolean findElement(int value);
+ 
+Index: BinarySearchTree/src/main/java/com/sparta/Employees/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.sparta.Employees;\nimport com.sparta.Room1.BinarySearchTree;\nimport com.sparta.model.Employee;\n\nimport java.io.IOException;\nimport java.time.LocalDate;\nimport java.util.ArrayList;\nimport java.util.List;\nimport java.util.Scanner;\nimport java.util.Set;\n\npublic class Main {\n    static BinarySearchTree employeeBinaryTree=null;\n\n    public static void main(String[] args) throws IOException {\n        boolean exit=false;\n        employeeBinaryTree=EmployeeStarter.start();\n        while(!exit){\n            System.out.println(\"Enter a lastname of employee to find details: \");\n            Scanner scanner=new Scanner(System.in);\n            String lastname=scanner.nextLine();\n            Set<Employee> employeeSet= employeeBinaryTree.findElement(lastname);\n            System.out.println(employeeSet);\n        }\n\n\n\n}\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/BinarySearchTree/src/main/java/com/sparta/Employees/Main.java b/BinarySearchTree/src/main/java/com/sparta/Employees/Main.java
+--- a/BinarySearchTree/src/main/java/com/sparta/Employees/Main.java	(revision 2d260c92d138a5d17c63879e31869d2037dd9723)
++++ b/BinarySearchTree/src/main/java/com/sparta/Employees/Main.java	(date 1680255419877)
+@@ -14,16 +14,20 @@
+ 
+     public static void main(String[] args) throws IOException {
+         boolean exit=false;
+-        employeeBinaryTree=EmployeeStarter.start();
+-        while(!exit){
+-            System.out.println("Enter a lastname of employee to find details: ");
+-            Scanner scanner=new Scanner(System.in);
+-            String lastname=scanner.nextLine();
+-            Set<Employee> employeeSet= employeeBinaryTree.findElement(lastname);
+-            System.out.println(employeeSet);
++        employeeBinaryTree = EmployeeStarter.start();
++//        System.out.println("Press tab to exit: ");
++//
++//        else {
++           // employeeBinaryTree = EmployeeStarter.start();
++            while (!exit) {
++                System.out.println("Enter a lastname of employee to find details: ");
++                Scanner scanner = new Scanner(System.in);
++                String lastname = scanner.nextLine();
++                Set<Employee> employeeSet = employeeBinaryTree.findElement(lastname);
++                System.out.println(employeeSet);
++            }
+         }
+-
+ 
+ 
+ }
+-}
+\ No newline at end of file
++//}
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"MavenProjectsManager\">\n    <option name=\"originalFiles\">\n      <list>\n        <option value=\"$PROJECT_DIR$/BinarySearchTree/pom.xml\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_19\" default=\"true\" project-jdk-name=\"19\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/out\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 2d260c92d138a5d17c63879e31869d2037dd9723)
++++ b/.idea/misc.xml	(date 1680189126595)
+@@ -7,7 +7,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="19" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="openjdk-17" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"CompilerConfiguration\">\n    <annotationProcessing>\n      <profile name=\"Maven default annotation processors profile\" enabled=\"true\">\n        <sourceOutputDir name=\"target/generated-sources/annotations\" />\n        <sourceTestOutputDir name=\"target/generated-test-sources/test-annotations\" />\n        <outputRelativeToContentRoot value=\"true\" />\n        <module name=\"BinarySearchTree\" />\n      </profile>\n    </annotationProcessing>\n    <bytecodeTargetLevel>\n      <module name=\"BinarySearchTree\" target=\"1.8\" />\n    </bytecodeTargetLevel>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision 2d260c92d138a5d17c63879e31869d2037dd9723)
++++ b/.idea/compiler.xml	(date 1680189208591)
+@@ -10,7 +10,7 @@
+       </profile>
+     </annotationProcessing>
+     <bytecodeTargetLevel>
+-      <module name="BinarySearchTree" target="1.8" />
++      <module name="BinarySearchTree" target="8" />
+     </bytecodeTargetLevel>
+   </component>
+ </project>
+\ No newline at end of file
+Index: BinarySearchTree/src/main/java/com/sparta/Employees/EmployeeStarter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.sparta.Employees;\n\nimport com.sparta.Room1.BinarySearchTree;\nimport com.sparta.model.Employee;\nimport com.sparta.model.Gender;\n\nimport java.io.IOException;\nimport java.time.LocalDate;\nimport java.util.*;\n\npublic class EmployeeStarter {\n    public static BinarySearchTree start() throws IOException {\n        System.out.println(\"Enter a number between 1 to 1000 to populate employees details: \");\n        Scanner scanner = new Scanner(System.in);\n        int numberOfEmployees = scanner.nextInt();\n        List<Employee> employeeData = EmployeeFactory.getEmployees(numberOfEmployees);\n        BinarySearchTree employeeBinaryTree = new BinarySearchTree();\n        employeeBinaryTree.addElements(employeeData);\n        return employeeBinaryTree;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/BinarySearchTree/src/main/java/com/sparta/Employees/EmployeeStarter.java b/BinarySearchTree/src/main/java/com/sparta/Employees/EmployeeStarter.java
+--- a/BinarySearchTree/src/main/java/com/sparta/Employees/EmployeeStarter.java	(revision 2d260c92d138a5d17c63879e31869d2037dd9723)
++++ b/BinarySearchTree/src/main/java/com/sparta/Employees/EmployeeStarter.java	(date 1680255456269)
+@@ -10,12 +10,30 @@
+ 
+ public class EmployeeStarter {
+     public static BinarySearchTree start() throws IOException {
++//        boolean exit=false;
++//        System.out.println("Press tab for exit or enter to continue: ");
++//        Scanner sc=new Scanner(System.in);
++//      String input=sc.nextLine();
++//        if(input=="\t")
++//        {
++//            exit=true;
++//            System.out.println("Thank you");
++//
++//        }
+         System.out.println("Enter a number between 1 to 1000 to populate employees details: ");
++
+         Scanner scanner = new Scanner(System.in);
+         int numberOfEmployees = scanner.nextInt();
+         List<Employee> employeeData = EmployeeFactory.getEmployees(numberOfEmployees);
++        for (Employee emp : employeeData) {
++            System.out.println(emp);
++        }
++
+         BinarySearchTree employeeBinaryTree = new BinarySearchTree();
+         employeeBinaryTree.addElements(employeeData);
++
++
+         return employeeBinaryTree;
+     }
+-}
++
++}
+\ No newline at end of file
