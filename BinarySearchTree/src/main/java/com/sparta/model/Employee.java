@@ -3,6 +3,29 @@ package com.sparta.model;
 import java.time.LocalDate;
 
 public class Employee {
+
+
+    private String empId;
+    private String namePrefix;
+    private String middleInitial;
+    private String firstName;
+    private String lastName;
+    private Gender gender;
+    private String emailId;
+    private LocalDate dateOfBirth;
+    private LocalDate dateOfJoining;
+    private Integer salary;
+
+    public Employee(String empNo, LocalDate birthDate, String firstName, String lastName, Gender gender, LocalDate hireDate) {
+        this.empId = empNo;
+        this.dateOfBirth = birthDate;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.dateOfJoining = hireDate;
+    }
+
+
     public String getEmpId() {
         return empId;
     }
@@ -83,14 +106,10 @@ public class Employee {
         this.salary = salary;
     }
 
-    private String empId;
-    private String namePrefix;
-    private String middleInitial;
-    private String firstName;
-    private String lastName;
-    private Gender gender;
-    private String emailId;
-    private LocalDate dateOfBirth;
-    private LocalDate dateOfJoining;
-    private Integer salary;
+    @Override
+    public String toString() {
+        return
+                empId + ',' + dateOfBirth + "," + firstName + "," + lastName + "," + gender + "," + dateOfJoining;
+
+    }
 }

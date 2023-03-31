@@ -1,5 +1,5 @@
 package com.sparta.model;
 
 public enum Gender {
-    MALE, FEMALE;
+    MALE, FEMALE, M, F;
 }
