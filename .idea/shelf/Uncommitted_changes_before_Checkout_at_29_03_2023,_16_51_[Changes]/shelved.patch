@@ -1,0 +1,38 @@
+Index: BinarySearchTree/src/main/java/com/sparta/Room1/BinarySearchTree.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.sparta.Room1;\n\nimport java.util.NoSuchElementException;\n\npublic class BinarySearchTree implements com.sparta.anu.BinaryTree {\n        private Node root;\n        private int size;\n\n        private class Node {\n            int value;\n            Node left, right;\n\n            Node(int value) {\n                this.value = value;\n            }\n        }\n\n        public int getRootElement() {\n            if (root == null) {\n                throw new NoSuchElementException(\"BinarySearchTree is empty.\");\n            }\n\n            return root.value;\n        }\n\n        public int getNumberOfElements() {\n            return size;\n        }\n\n        public void addElement(int element) {\n            root = addElement(root, element);\n            size++;\n        }\n\n        private Node addElement(Node node, int element) {\n            if (node == null) {\n                return new Node(element);\n            }\n\n            if (element < node.value) {\n                node.left = addElement(node.left, element);\n            } else if (element > node.value) {\n                node.right = addElement(node.right, element);\n            }\n\n            return node;\n        }\n\n        public void addElements(int[] elements) {\n            for (int element : elements) {\n                addElement(element);\n            }\n        }\n\n        public boolean findElement(int value) {\n            return findElement(root, value);\n        }\n\n        private boolean findElement(Node node, int value) {\n            if (node == null) {\n                return false;\n            }\n\n            if (value == node.value) {\n                return true;\n            } else if (value < node.value) {\n                return findElement(node.left, value);\n            } else {\n                return findElement(node.right, value);\n            }\n        }\n\n        public int[] getSortedTreeAsc() {\n            int[] result = new int[size];\n            int i = 0;\n            inOrder(root, result, i);\n            return result;\n        }\n\n        private int inOrder(Node node, int[] result, int i) {\n            if (node == null) {\n                return i;\n            }\n            i = inOrder(node.left, result, i);\n            result[i++] = node.value;\n            return inOrder(node.right, result, i);\n        }\n\n        public int[] getSortedTreeDesc() {\n            int[] result = new int[size];\n            int i = 0;\n            reverseInOrder(root, result, i);\n            return result;\n        }\n\n        private int reverseInOrder(Node node, int[] result, int i) {\n            if (node == null) {\n                return i;\n            }\n            i = reverseInOrder(node.right, result, i);\n            result[i++] = node.value;\n            return reverseInOrder(node.left, result, i);\n        }\n    }\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/BinarySearchTree/src/main/java/com/sparta/Room1/BinarySearchTree.java b/BinarySearchTree/src/main/java/com/sparta/Room1/BinarySearchTree.java
+--- a/BinarySearchTree/src/main/java/com/sparta/Room1/BinarySearchTree.java	(revision c792596753e9eaad62e3c4cdfa7e89eb7aa1b72e)
++++ b/BinarySearchTree/src/main/java/com/sparta/Room1/BinarySearchTree.java	(date 1680101222649)
+@@ -2,7 +2,7 @@
+ 
+ import java.util.NoSuchElementException;
+ 
+-public class BinarySearchTree implements com.sparta.anu.BinaryTree {
++public class BinarySearchTree implements BinaryTree {
+         private Node root;
+         private int size;
+ 
+Index: BinarySearchTree/src/test/java/com/sparta/Room1/AppTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.sparta.anu;\n\n\nimport org.junit.jupiter.api.Assertions;\nimport org.junit.jupiter.api.DisplayName;\nimport org.junit.jupiter.api.Test;\n\n\npublic class AppTest \n{\n\n    @Test\n    @DisplayName(\"\")\n    void test() {\n     Assertions.assertEquals(1,1);\n     }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/BinarySearchTree/src/test/java/com/sparta/Room1/AppTest.java b/BinarySearchTree/src/test/java/com/sparta/Room1/AppTest.java
+--- a/BinarySearchTree/src/test/java/com/sparta/Room1/AppTest.java	(revision c792596753e9eaad62e3c4cdfa7e89eb7aa1b72e)
++++ b/BinarySearchTree/src/test/java/com/sparta/Room1/AppTest.java	(date 1680100720295)
+@@ -11,7 +11,6 @@
+ 
+     @Test
+     @DisplayName("")
+-    void test() {
+-     Assertions.assertEquals(1,1);
++    void test() {Assertions.assertEquals(1,1);
+      }
+ }
